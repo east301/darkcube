@@ -1,0 +1,25 @@
+#
+# .travis.yml
+#
+
+sudo: required
+
+language: python
+python:
+  - "3.5"
+
+services:
+  - redis-server
+
+install:
+  - sudo apt-get update
+  - sudo apt-get install -y npm
+  - make install-python-dependencies
+  - make install-node-dependencies
+
+before_script:
+  - sed -ie 's/darkcube.settings.development/darkcube.settings.ci/g' setup.cfg
+
+script:
+  - make run-tests SETTINGS=darkcube.settings.ci
+  - make run-lint

@@ -64,7 +64,8 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     # darkcube apps
-    # TODO put our apps here
+    'darkcube.apps.common',
+    'darkcube.apps.vendor',
 ]
 
 MIDDLEWARE_CLASSES = [

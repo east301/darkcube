@@ -20,7 +20,9 @@
 #
 
 from django.conf import settings
-from django.conf.urls import url
+from django.conf.urls import include, url
+
+from .apps.common import urls as common_urls
 
 
 # ================================================================================
@@ -28,7 +30,7 @@ from django.conf.urls import url
 # ================================================================================
 
 urlpatterns = [
-    # TODO: add your own URL patterns
+    url(r'', include(common_urls)),
 ]
 
 

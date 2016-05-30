@@ -23,3 +23,7 @@ before_script:
 script:
   - make run-tests SETTINGS=darkcube.settings.ci
   - make run-lint
+
+after_script:
+  - pip install codeclimate-test-reporter
+  - codeclimate-test-reporter
